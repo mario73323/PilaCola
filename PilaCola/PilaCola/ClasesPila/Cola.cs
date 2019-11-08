@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PilaCola.ClasesPila;
 
-namespace PilaCola.ClasesCola
+namespace PilaCola.ClasesPila
 {
-    public class Cola
+    class Cola
     {
-        private NodoCola inicio = new NodoCola();
-        private NodoCola ultimo = new NodoCola();
+        private Nodo inicio = new Nodo();
+        private Nodo ultimo = new Nodo();
         public Cola()
         {
             inicio = null;
@@ -18,19 +17,19 @@ namespace PilaCola.ClasesCola
         }
         public void Insertarcola()
         {
-            NodoCola ingresa = new NodoCola();
+            Nodo ingresa = new Nodo();
             Console.WriteLine("Ingrese el dato para la cola");
-            ingresa.Datocola = IngresarDatocola();
+            ingresa.Dato = IngresarDatocola();
             if (VaciaCola())
             {
-                ingresa.Siguientecola = inicio;
+                ingresa.Siguiente = inicio;
                 inicio = ingresa;
                 ultimo = ingresa;
             }
             else
             {
-                ingresa.Siguientecola = null;
-                ultimo.Siguientecola = ingresa;
+                ingresa.Siguiente = null;
+                ultimo.Siguiente = ingresa;
                 ultimo = ingresa;
             }
             Console.WriteLine("Dato Ingresado");
@@ -38,14 +37,14 @@ namespace PilaCola.ClasesCola
         }
         public void Mostrarcola()
         {
-            NodoCola temp = new NodoCola();
+            Nodo temp = new Nodo();
             temp = inicio;
             if (!VaciaCola())
             {
                 while (temp != null)
                 {
-                    Console.WriteLine("  " + temp.Datocola);
-                    temp = temp.Siguientecola;
+                    Console.WriteLine("  " + temp.Dato);
+                    temp = temp.Siguiente;
                 }
             }
             else
@@ -55,8 +54,8 @@ namespace PilaCola.ClasesCola
         {
             if (!VaciaCola())
             {
-                Console.WriteLine("Se elimino el numero " + inicio.Datocola);
-                inicio = inicio.Siguientecola;
+                Console.WriteLine("Se elimino el numero " + inicio.Dato);
+                inicio = inicio.Siguiente;
             }
             else
                 Console.WriteLine("La cola esta vacia");

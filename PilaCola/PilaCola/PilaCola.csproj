@@ -43,8 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClasesCola\Cola.cs" />
-    <Compile Include="ClasesCola\NodoCola.cs" />
+    <Compile Include="ClasesPila\Cola.cs" />
     <Compile Include="ClasesPila\Pila.cs" />
     <Compile Include="ClasesPila\Nodo.cs" />
     <Compile Include="Program.cs" />
